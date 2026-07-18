@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+tools/generator/node_modules/
+
+# Build output
+dist/
+out-tsc/
+tools/generator/dist/
+
+# Angular / tooling caches
+.angular/
+.nx/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

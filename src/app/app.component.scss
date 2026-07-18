@@ -1,0 +1,22 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: #1f2937;
+  color: #fff;
+
+  h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  nav a {
+    color: #93c5fd;
+    text-decoration: none;
+  }
+}
+
+.app-main {
+  padding: 24px;
+}
