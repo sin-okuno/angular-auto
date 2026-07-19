@@ -101,57 +101,57 @@
 
 ## 型定義
 
-| カテゴリー | 型名 | プロパティ | 型 | 任意 | 説明 |
-| --- | --- | --- | --- | --- | --- |
-| api | ProductStructureApiRequest | keyword | string | false | 検索キーワード |
-| api | ProductStructureApiRequest | categoryId | string \| null | false | カテゴリID |
-| api | ProductTreeResponseDto | nodes | ProductTreeNodeDto[] | false | ツリーノード一覧 |
-| api | ProductTreeNodeDto | productId | string | false | 製品ID |
-| api | ProductTreeNodeDto | productName | string | false | 製品名 |
-| api | ProductTreeNodeDto | productCode | string | false | 製品コード |
-| api | ProductTreeNodeDto | parentId | string \| null | false | 親製品ID |
-| api | ProductTreeNodeDto | children | ProductTreeNodeDto[] | false | 子ノード |
-| api | ProductDetailApiResponse | productId | string | false | 製品ID |
-| api | ProductDetailApiResponse | productName | string | false | 製品名 |
-| api | ProductDetailApiResponse | productCode | string | false | 製品コード |
-| api | ProductDetailApiResponse | price | number | false | 価格 |
-| api | ProductDetailApiResponse | description | string \| null | false | 説明 |
-| api | ProductDetailApiResponse | revision | number | false | リビジョン |
-| api | ProductUpdateApiRequest | productName | string | false | 製品名 |
-| api | ProductUpdateApiRequest | price | number | false | 価格 |
-| api | ProductUpdateApiRequest | description | string \| null | false | 説明 |
-| api | ProductUpdateApiRequest | revision | number | false | リビジョン |
-| view | ProductTreeNode | productId | string | false | 製品ID |
-| view | ProductTreeNode | productName | string | false | 製品名 |
-| view | ProductTreeNode | productCode | string | false | 製品コード |
-| view | ProductTreeNode | parentId | string \| null | false | 親製品ID |
-| view | ProductTreeNode | children | ProductTreeNode[] | false | 子ノード |
-| view | ProductDetail | productId | string | false | 製品ID |
-| view | ProductDetail | productName | string | false | 製品名 |
-| view | ProductDetail | productCode | string | false | 製品コード |
-| view | ProductDetail | price | number | false | 価格 |
-| view | ProductDetail | description | string \| null | false | 説明 |
-| view | ProductDetail | revision | number | false | リビジョン |
-| view | ApiError | code | string | false | エラーコード |
-| view | ApiError | message | string | false | エラーメッセージ |
-| view | PendingOperation | operationId | string | false | 保留中の操作ID |
-| view | PendingOperation | payload | string \| null | true | 保留中の操作ペイロード |
-| action | LoadTreePayload | keyword | string | false | 検索キーワード |
-| action | LoadTreePayload | categoryId | string \| null | false | カテゴリID |
-| action | LoadTreeSuccessPayload | nodes | ProductTreeNode[] | false | 取得したツリー |
-| action | SelectNodePayload | productId | string | false | 選択した製品ID |
-| action | LoadDetailPayload | productId | string | false | 取得する製品ID |
-| action | LoadDetailSuccessPayload | detail | ProductDetail | false | 取得した製品詳細 |
-| action | SaveProductPayload | productId | string | false | 製品ID |
-| action | SaveProductPayload | productName | string | false | 製品名 |
-| action | SaveProductPayload | price | number | false | 価格 |
-| action | SaveProductPayload | description | string \| null | false | 説明 |
-| action | SaveProductPayload | revision | number | false | リビジョン |
-| action | SaveProductSuccessPayload | detail | ProductDetail | false | 保存後の製品詳細 |
-| action | ReloadDetailPayload | productId | string | false | 再取得する製品ID |
-| action | LoadPermissionsSuccessPayload | permissions | string[] | false | 取得した権限コード |
-| action | SetPendingOperationPayload | pending | PendingOperation | false | 保留操作 |
-| action | ApiErrorPayload | error | ApiError | false | APIエラー |
+| カテゴリー | 型名 | プロパティ | 型 | 任意 | 最大桁数 | 小数桁 | 説明 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| api | ProductStructureApiRequest | keyword | string | false | 100 | - | 検索キーワード |
+| api | ProductStructureApiRequest | categoryId | string \| null | false | 50 | - | カテゴリID |
+| api | ProductTreeResponseDto | nodes | ProductTreeNodeDto[] | false | - | - | ツリーノード一覧 |
+| api | ProductTreeNodeDto | productId | string | false | 50 | - | 製品ID |
+| api | ProductTreeNodeDto | productName | string | false | 100 | - | 製品名 |
+| api | ProductTreeNodeDto | productCode | string | false | 30 | - | 製品コード |
+| api | ProductTreeNodeDto | parentId | string \| null | false | 50 | - | 親製品ID |
+| api | ProductTreeNodeDto | children | ProductTreeNodeDto[] | false | - | - | 子ノード |
+| api | ProductDetailApiResponse | productId | string | false | 50 | - | 製品ID |
+| api | ProductDetailApiResponse | productName | string | false | 100 | - | 製品名 |
+| api | ProductDetailApiResponse | productCode | string | false | 30 | - | 製品コード |
+| api | ProductDetailApiResponse | price | number | false | 12 | 2 | 価格 |
+| api | ProductDetailApiResponse | description | string \| null | false | 500 | - | 説明 |
+| api | ProductDetailApiResponse | revision | number | false | 10 | 0 | リビジョン |
+| api | ProductUpdateApiRequest | productName | string | false | 100 | - | 製品名 |
+| api | ProductUpdateApiRequest | price | number | false | 12 | 2 | 価格 |
+| api | ProductUpdateApiRequest | description | string \| null | false | 500 | - | 説明 |
+| api | ProductUpdateApiRequest | revision | number | false | 10 | 0 | リビジョン |
+| view | ProductTreeNode | productId | string | false | 50 | - | 製品ID |
+| view | ProductTreeNode | productName | string | false | 100 | - | 製品名 |
+| view | ProductTreeNode | productCode | string | false | 30 | - | 製品コード |
+| view | ProductTreeNode | parentId | string \| null | false | 50 | - | 親製品ID |
+| view | ProductTreeNode | children | ProductTreeNode[] | false | - | - | 子ノード |
+| view | ProductDetail | productId | string | false | 50 | - | 製品ID |
+| view | ProductDetail | productName | string | false | 100 | - | 製品名 |
+| view | ProductDetail | productCode | string | false | 30 | - | 製品コード |
+| view | ProductDetail | price | number | false | 12 | 2 | 価格 |
+| view | ProductDetail | description | string \| null | false | 500 | - | 説明 |
+| view | ProductDetail | revision | number | false | 10 | 0 | リビジョン |
+| view | ApiError | code | string | false | 50 | - | エラーコード |
+| view | ApiError | message | string | false | 200 | - | エラーメッセージ |
+| view | PendingOperation | operationId | string | false | 50 | - | 保留中の操作ID |
+| view | PendingOperation | payload | string \| null | true | 500 | - | 保留中の操作ペイロード |
+| action | LoadTreePayload | keyword | string | false | 100 | - | 検索キーワード |
+| action | LoadTreePayload | categoryId | string \| null | false | 50 | - | カテゴリID |
+| action | LoadTreeSuccessPayload | nodes | ProductTreeNode[] | false | - | - | 取得したツリー |
+| action | SelectNodePayload | productId | string | false | 50 | - | 選択した製品ID |
+| action | LoadDetailPayload | productId | string | false | 50 | - | 取得する製品ID |
+| action | LoadDetailSuccessPayload | detail | ProductDetail | false | - | - | 取得した製品詳細 |
+| action | SaveProductPayload | productId | string | false | 50 | - | 製品ID |
+| action | SaveProductPayload | productName | string | false | 100 | - | 製品名 |
+| action | SaveProductPayload | price | number | false | 12 | 2 | 価格 |
+| action | SaveProductPayload | description | string \| null | false | 500 | - | 説明 |
+| action | SaveProductPayload | revision | number | false | 10 | 0 | リビジョン |
+| action | SaveProductSuccessPayload | detail | ProductDetail | false | - | - | 保存後の製品詳細 |
+| action | ReloadDetailPayload | productId | string | false | 50 | - | 再取得する製品ID |
+| action | LoadPermissionsSuccessPayload | permissions | string[] | false | - | - | 取得した権限コード |
+| action | SetPendingOperationPayload | pending | PendingOperation | false | - | - | 保留操作 |
+| action | ApiErrorPayload | error | ApiError | false | - | - | APIエラー |
 
 ## Action一覧・Store更新内容
 
