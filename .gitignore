@@ -1,11 +1,9 @@
 # Dependencies
 node_modules/
-tools/generator/node_modules/
 
 # Build output
 dist/
 out-tsc/
-tools/generator/dist/
 
 # Angular / tooling caches
 .angular/
@@ -15,3 +13,7 @@ tools/generator/dist/
 # OS
 Thumbs.db
 .DS_Store
+
+# Generated YAML (screen-angular-generator)
+**/draft-screen.yaml
+**/resolved-screen.yaml
