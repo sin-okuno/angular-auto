@@ -1,0 +1,49 @@
+{
+  "name": "screen-angular-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Markdown screen + components specs to Angular 22 code generator.",
+  "engines": {
+    "node": ">=22.20.0 <23"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "spec:parse": "tsx src/cli.ts parse",
+    "spec:validate": "tsx src/cli.ts validate",
+    "spec:resolve": "tsx src/cli.ts resolve",
+    "spec:compile": "tsx src/cli.ts compile",
+    "generate:angular": "tsx src/cli.ts generate",
+    "generate": "tsx src/cli.ts all",
+    "generated:check": "tsx src/cli.ts check"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "commander": "^13.1.0",
+    "handlebars": "^4.7.9",
+    "mdast-util-to-string": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/handlebars": "^4.0.40",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^22.20.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.9.6",
+    "tsx": "^4.19.3",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.0.9"
+  }
+}

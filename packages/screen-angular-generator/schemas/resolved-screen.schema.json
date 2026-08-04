@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/resolved-screen.schema.json",
+  "title": "ResolvedScreenDocument",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metadata",
+    "generator",
+    "angular",
+    "screen",
+    "resolvedTypes",
+    "resolvedApis",
+    "resolvedActions",
+    "resolvedStore",
+    "resolvedEffects",
+    "resolvedMappers",
+    "resolvedForms",
+    "resolvedValidations",
+    "resolvedComponents",
+    "resolvedModule",
+    "resolvedRouting",
+    "resolvedTests"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["resolverVersion", "generatedAt", "sourceDraft"],
+      "additionalProperties": false,
+      "properties": {
+        "resolverVersion": { "type": "string" },
+        "generatedAt": { "type": "string" },
+        "sourceDraft": { "type": "string" }
+      }
+    },
+    "generator": {
+      "type": "object",
+      "required": ["target", "generatorVersion"],
+      "additionalProperties": false,
+      "properties": {
+        "target": { "const": "angular" },
+        "generatorVersion": { "type": "string" }
+      }
+    },
+    "angular": { "type": "object" },
+    "screen": {
+      "type": "object",
+      "required": ["id", "name", "route", "featureName", "featureKebab", "featureCamel", "featurePascal"],
+      "additionalProperties": true
+    },
+    "resolvedTypes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "tsName", "sourceFile", "properties"],
+        "additionalProperties": true
+      }
+    },
+    "resolvedApis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "methodName", "method", "path"],
+        "additionalProperties": true
+      }
+    },
+    "resolvedActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "creatorName", "eventName"],
+        "additionalProperties": true
+      }
+    },
+    "resolvedStore": {
+      "type": "object",
+      "required": ["featureKey", "stateInterfaceName", "fields", "selectors"],
+      "additionalProperties": true
+    },
+    "resolvedEffects": { "type": "array", "items": { "type": "object" } },
+    "resolvedMappers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "functionName", "inputType", "outputType"],
+        "additionalProperties": true
+      }
+    },
+    "resolvedForms": { "type": "array", "items": { "type": "object" } },
+    "resolvedValidations": { "type": "array", "items": { "type": "object" } },
+    "resolvedComponents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "className", "fileName", "selector", "type"],
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "object",
+            "required": ["id", "rules"],
+            "properties": {
+              "id": { "type": "string" },
+              "rules": {
+                "type": "object",
+                "required": ["storeAccess", "selectorAccess", "dispatchActions", "serviceAccess"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "resolvedModule": {
+      "type": "object",
+      "required": ["className", "fileName", "declarations"],
+      "additionalProperties": true
+    },
+    "resolvedRouting": {
+      "type": "object",
+      "required": ["className", "fileName", "routes"],
+      "additionalProperties": true
+    },
+    "resolvedTests": { "type": "array", "items": { "type": "object" } }
+  }
+}

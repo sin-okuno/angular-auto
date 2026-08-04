@@ -1,0 +1,29 @@
+<!-- AUTO-GENERATED FILE. -->
+<section class="product-detail-form">
+  @if (form) {
+    <form [formGroup]="form">
+      <label>
+        productName
+        <input formControlName="productName" />
+      </label>
+      <label>
+        productCode
+        <input formControlName="productCode" />
+      </label>
+      <label>
+        price
+        <input formControlName="price" />
+      </label>
+      <label>
+        description
+        <input formControlName="description" />
+      </label>
+      <label>
+        revision
+        <input formControlName="revision" />
+      </label>
+      <button type="button" (click)="emitSave()">保存</button>
+      <button type="button" (click)="cancelRequested.emit()">キャンセル</button>
+    </form>
+  }
+</section>

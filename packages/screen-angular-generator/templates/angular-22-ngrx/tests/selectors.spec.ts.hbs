@@ -1,0 +1,14 @@
+// AUTO-GENERATED FILE.
+import { select{{featurePascal}}ViewModel } from './{{featureKebab}}.selectors';
+import { {{resolved.resolvedStore.initialStateName}} } from './{{featureKebab}}.state';
+
+describe('{{featurePascal}} selectors', () => {
+  it('should project the view model', () => {
+    const result = select{{featurePascal}}ViewModel.projector({{resolved.resolvedStore.initialStateName}});
+    expect(result).toEqual({{resolved.resolvedStore.initialStateName}});
+  });
+
+  it('should expose store fields', () => {
+    expect({{resolved.resolvedStore.initialStateName}}).toBeTruthy();
+  });
+});

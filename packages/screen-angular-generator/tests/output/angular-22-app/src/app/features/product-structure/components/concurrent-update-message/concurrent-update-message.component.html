@@ -1,0 +1,16 @@
+<!-- AUTO-GENERATED FILE. -->
+<section class="concurrent-update-message">
+  @if (visible) {
+    <div data-input="visible">visible</div>
+  }
+  @if (message) {
+    <div data-input="message">message</div>
+  }
+  @if (loading) {
+    <div data-input="loading">loading</div>
+  }
+  @if (productId) {
+    <div data-input="productId">productId</div>
+  }
+  <button type="button" (click)="reloadRequested.emit()">reloadRequested</button>
+</section>

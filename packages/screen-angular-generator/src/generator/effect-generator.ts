@@ -1,0 +1,9 @@
+import type { GenerationContext } from './generation-types.js';
+import { renderTemplate } from './template-renderer.js';
+
+export function renderEffectFile(
+  context: GenerationContext,
+  header: Record<string, string>,
+): string {
+  return renderTemplate('store/effects.ts.hbs', { ...context, header });
+}

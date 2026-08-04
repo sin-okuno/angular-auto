@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+draft-screen.yaml
+resolved-screen.yaml
+tests/output/angular-22-app/node_modules/
+tests/output/angular-22-app/dist/
+tests/tools/

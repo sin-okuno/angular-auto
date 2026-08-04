@@ -1,0 +1,13 @@
+// AUTO-GENERATED FILE.
+import * as mappers from './{{featureKebab}}.mapper';
+
+describe('{{featurePascal}} mappers', () => {
+  it('should export mapper functions', () => {
+    expect(Object.keys(mappers).length).toBeGreaterThan(0);
+  });
+
+  it('should map http errors', () => {
+    const result = mappers.mapHttpError(new Error('boom'));
+    expect(result.message).toContain('boom');
+  });
+});

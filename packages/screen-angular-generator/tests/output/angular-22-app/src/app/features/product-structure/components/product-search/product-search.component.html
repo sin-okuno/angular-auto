@@ -1,0 +1,17 @@
+<!-- AUTO-GENERATED FILE. -->
+<section class="product-search">
+  @if (form) {
+    <form [formGroup]="form">
+      <label>
+        keyword
+        <input formControlName="keyword" />
+      </label>
+      <label>
+        categoryId
+        <input formControlName="categoryId" />
+      </label>
+      <button type="button" (click)="emitSearch()">検索</button>
+      <button type="button" (click)="clearRequested.emit()">クリア</button>
+    </form>
+  }
+</section>

@@ -1,0 +1,19 @@
+// AUTO-GENERATED FILE.
+import { {{featureCamel}}Reducer } from './{{featureKebab}}.reducer';
+import { {{resolved.resolvedStore.initialStateName}} } from './{{featureKebab}}.state';
+import { {{actionsGroupName}} } from './{{featureKebab}}.actions';
+
+describe('{{featureCamel}}Reducer', () => {
+  it('should return the initial state for an unknown action', () => {
+    const state = {{featureCamel}}Reducer({{resolved.resolvedStore.initialStateName}}, { type: 'unknown' });
+    expect(state).toEqual({{resolved.resolvedStore.initialStateName}});
+  });
+
+  it('should handle enterPage without throwing', () => {
+    const state = {{featureCamel}}Reducer(
+      {{resolved.resolvedStore.initialStateName}},
+      {{actionsGroupName}}.enterPage(),
+    );
+    expect(state).toBeTruthy();
+  });
+});

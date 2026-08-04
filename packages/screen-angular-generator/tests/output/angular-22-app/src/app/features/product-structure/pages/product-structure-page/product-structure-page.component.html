@@ -1,0 +1,41 @@
+<!-- AUTO-GENERATED FILE. -->
+@if (vm$ | async; as vm) {
+  <section class="product-structure-page">
+    <h1>製品構成管理画面</h1>
+    <app-product-search
+      [condition]="$any(vm.searchCondition)"
+      [disabled]="$any(vm.saving)"
+      (searchRequested)="onSearchRequested($event)"
+      (clearRequested)="onClearRequested()"
+    ></app-product-search>
+    <app-product-tree
+      [nodes]="$any(vm.treeNodes)"
+      [selectedComponentId]="$any(vm.selectedComponentId)"
+      [loading]="$any(vm.treeLoading)"
+      [disabled]="$any(vm.saving)"
+      [error]="$any(vm.treeError)"
+      (nodeSelected)="onNodeSelected($event)"
+      (nodeToggled)="onNodeToggled($event)"
+    ></app-product-tree>
+    <app-product-detail-form
+      [detail]="$any(vm.detail)"
+      [selectedComponentId]="$any(vm.selectedComponentId)"
+      [readonly]="$any(vm.concurrentUpdate)"
+      [loading]="$any(vm.treeLoading)"
+      [saving]="$any(vm.saving)"
+      [saveError]="$any(vm.saveError)"
+      [concurrentUpdate]="$any(vm.concurrentUpdate)"
+      (saveRequested)="onSaveRequested($event)"
+      (cancelRequested)="onCancelRequested()"
+      (reloadRequested)="onReloadRequested($event)"
+      (dirtyChanged)="onDirtyChanged($event)"
+    ></app-product-detail-form>
+    <app-unsaved-changes-dialog
+      [visible]="$any(vm.concurrentUpdate)"
+      [message]="$any(vm.saveError)"
+      [disabled]="$any(vm.saving)"
+      (confirmed)="onConfirmed()"
+      (cancelled)="onCancelled()"
+    ></app-unsaved-changes-dialog>
+  </section>
+}

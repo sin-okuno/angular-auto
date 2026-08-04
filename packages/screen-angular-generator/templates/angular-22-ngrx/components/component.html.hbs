@@ -1,0 +1,70 @@
+<!-- AUTO-GENERATED FILE. -->
+{{#if (eq component.type.id "container")}}
+@if (vm$ | async; as vm) {
+  <section class="{{component.fileName}}">
+    <h1>{{resolved.screen.name}}</h1>
+{{#each childComponents}}
+    <{{selector}}
+{{#each inputs}}
+      [{{propertyName}}]="{{bindingExpr}}"
+{{/each}}
+{{#each outputs}}
+{{#if handledBy.handlerName}}
+{{#if hasPayload}}
+      ({{propertyName}})="{{handledBy.handlerName}}($event)"
+{{else}}
+      ({{propertyName}})="{{handledBy.handlerName}}()"
+{{/if}}
+{{/if}}
+{{/each}}
+    ></{{selector}}>
+{{/each}}
+  </section>
+}
+{{else if (eq component.type.id "dialog")}}
+@if (visible) {
+  <div class="dialog" role="dialog" aria-modal="true">
+    <p>{{message}}</p>
+    <button type="button" (click)="confirm()">確認</button>
+    <button type="button" (click)="cancel()">取消</button>
+  </div>
+}
+{{else}}
+<section class="{{component.fileName}}">
+{{#if component.ownsForm}}
+  @if (form) {
+    <form [formGroup]="form">
+{{#each component.formControls}}
+      <label>
+        {{propertyName}}
+        <input formControlName="{{propertyName}}" />
+      </label>
+{{/each}}
+{{#each component.outputs}}
+{{#if (eq id "searchRequested")}}
+      <button type="button" (click)="emitSearch()">検索</button>
+{{/if}}
+{{#if (eq id "clearRequested")}}
+      <button type="button" (click)="{{propertyName}}.emit()">クリア</button>
+{{/if}}
+{{#if (eq id "saveRequested")}}
+      <button type="button" (click)="emitSave()">保存</button>
+{{/if}}
+{{#if (eq id "cancelRequested")}}
+      <button type="button" (click)="{{propertyName}}.emit()">キャンセル</button>
+{{/if}}
+{{/each}}
+    </form>
+  }
+{{else}}
+{{#each component.inputs}}
+  @if ({{propertyName}}) {
+    <div data-input="{{propertyName}}">{{propertyName}}</div>
+  }
+{{/each}}
+{{#each component.outputs}}
+  <button type="button" (click)="{{propertyName}}.emit()">{{propertyName}}</button>
+{{/each}}
+{{/if}}
+</section>
+{{/if}}

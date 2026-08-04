@@ -23,15 +23,10 @@ cd packages/screen-angular-generator
 npm install
 
 # 2. 一括生成（parse → validate → resolve → Angular 生成）
-npm run generate -- \
-  --spec ./specs/product-structure \
-  --target ./tests/output/angular-22-app \
-  --force
+npm run generate -- --spec ./specs/product-structure --target ./tests/output/angular-22-app --force
 
 # 3. 生成結果の検証
-npm run generated:check -- \
-  --target ./tests/output/angular-22-app \
-  --feature product-structure
+npm run generated:check -- --target ./tests/output/angular-22-app --feature product-structure
 ```
 
 ルートからも実行できます。

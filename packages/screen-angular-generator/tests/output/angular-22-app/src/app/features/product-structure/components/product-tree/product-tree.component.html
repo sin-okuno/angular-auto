@@ -1,0 +1,20 @@
+<!-- AUTO-GENERATED FILE. -->
+<section class="product-tree">
+  @if (nodes) {
+    <div data-input="nodes">nodes</div>
+  }
+  @if (selectedComponentId) {
+    <div data-input="selectedComponentId">selectedComponentId</div>
+  }
+  @if (loading) {
+    <div data-input="loading">loading</div>
+  }
+  @if (disabled) {
+    <div data-input="disabled">disabled</div>
+  }
+  @if (error) {
+    <div data-input="error">error</div>
+  }
+  <button type="button" (click)="nodeSelected.emit()">nodeSelected</button>
+  <button type="button" (click)="nodeToggled.emit()">nodeToggled</button>
+</section>
